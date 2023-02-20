@@ -1,6 +1,6 @@
 // C program for implementation of Bubble sort 
 #include <stdio.h> 
-
+#include "sort.h"
   
 
 void swap(int* xp, int* yp) 
@@ -16,22 +16,24 @@ void swap(int* xp, int* yp)
   
 // A function to implement bubble sort 
 
-void bubble_sort(int array[], int n) 
+void bubble_sort(int array[], size_t size) 
 { 
 
-    int i, j; 
+    size_t i, j; 
 
-    for (i = 0; i < n - 1; i++) 
+    for (i = 0; i < size - 1; i++) 
 
   
 
         // Last i elements are already in place 
 
-        for (j = 0; j < n - i - 1; j++) 
+        for (j = 0; j < size - i - 1; j++) {
 
             if (array[j] > array[j + 1]) 
 
-                swap(&array[j], &array[j + 1]); 
+                swap(&array[j], &array[j + 1]);
+    print_array(array, size);
 } 
+}
 
   
